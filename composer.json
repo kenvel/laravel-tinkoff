@@ -15,8 +15,7 @@
             "homepage": "https://github.com/kenvel/",
             "role": "Developer"
         }
-    ],
-    "minimum-stability": "dev",
+    ],    
     "require": {
         "php": "^7.1"
     },
