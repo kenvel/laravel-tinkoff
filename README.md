@@ -12,20 +12,20 @@
 
 С помощью [Composer](https://getcomposer.org/):
 
-```bash
+```php
 composer require kenvel/laravel-tinkoff
 ```
 
 Подключение в контроллере:
 
-```bash
+```php
 use Kenvel\Tinkoff;
 ```
 
 ## Примеры использования
 ### Инициализация
 
-```bash
+```php
 $api_url    = 'https://securepay.tinkoff.ru/v2/';
 $terminal   = '152619634343';
 $secret_key = 'terminal_secret_password';
@@ -34,7 +34,7 @@ $tinkoff = new Tinkoff($api_url, $terminal, $secret_key);
 ```
 
 ### Получить URL для оплаты
-```bash
+```php
 //Подготовка массива с данными об оплате
 $payment['OrderId']     = '123456';         //Ваш идентификатор платежа
 $payment['Amount']      = '100';            //сумма всего платежа в рублях
@@ -64,7 +64,7 @@ if(!$paymentURL){
 ```
 
 ### Получить статус платежа
-```bash
+```php
 $status = $tinkoff->getState('67442541')
 
 //Контроль ошибок
@@ -76,7 +76,7 @@ if(!$status){
 ```
 
 ### Отмена платежа
-```bash
+```php
 $status = $tinkoff->cencelPayment('67442541')
 
 //Контроль ошибок
@@ -88,7 +88,7 @@ if(!$status){
 ```
 
 ### Подтверждение платежа
-```bash
+```php
 $status = $tinkoff->confirmPayment('67442541')
 
 //Контроль ошибок
