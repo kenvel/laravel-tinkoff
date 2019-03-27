@@ -20,6 +20,6 @@
         "php": "^7.1"
     },
     "autoload": {
-        "psr-4": { "Kenvel\\": "src/" }
+        "psr-4": { "Kenvel": "src" }
     }
 }
