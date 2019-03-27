@@ -23,7 +23,7 @@ use Kenvel\Tinkoff;
 ```
 
 ## Примеры использования
-### Инициализация
+### 1 Инициализация
 
 ```php
 $api_url    = 'https://securepay.tinkoff.ru/v2/';
@@ -33,7 +33,7 @@ $secret_key = 'terminal_secret_password';
 $tinkoff = new Tinkoff($api_url, $terminal, $secret_key);
 ```
 
-### Получить URL для оплаты
+### 2 Получить URL для оплаты
 ```php
 //Подготовка массива с данными об оплате
 $payment['OrderId']     = '123456';         //Ваш идентификатор платежа
@@ -59,13 +59,16 @@ $paymentURL = $tinkoff->paymentURL($payment, $items);
 if(!$paymentURL){
   echo($tinkoff->error);
 } else {
+  $payment_id = $tinkoff->payment_id;
   header('Location: ' . $paymentURL);
 }
 ```
 
-### Получить статус платежа
+### 3 Получить статус платежа
 ```php
-$status = $tinkoff->getState('67442541')
+//$payment_id Идентификатор платежа банка (полученый в пункте "2 Получить URL для оплаты")
+
+$status = $tinkoff->getState($payment_id)
 
 //Контроль ошибок
 if(!$status){
@@ -75,9 +78,9 @@ if(!$status){
 }
 ```
 
-### Отмена платежа
+### 4 Отмена платежа
 ```php
-$status = $tinkoff->cencelPayment('67442541')
+$status = $tinkoff->cencelPayment($payment_id)
 
 //Контроль ошибок
 if(!$status){
@@ -87,9 +90,9 @@ if(!$status){
 }
 ```
 
-### Подтверждение платежа
+### 5 Подтверждение платежа
 ```php
-$status = $tinkoff->confirmPayment('67442541')
+$status = $tinkoff->confirmPayment($payment_id)
 
 //Контроль ошибок
 if(!$status){
