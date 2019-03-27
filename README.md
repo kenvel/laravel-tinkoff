@@ -1,5 +1,5 @@
-# Simple Tinkoff bank acquiring library
-Простая библиотека для приема платежей через интернет.
+# Simple Tinkoff bank acquiring library.
+Простая библиотека для приема платежей через интернет для Тинькофф банк.
 
 ### Возможности
 
