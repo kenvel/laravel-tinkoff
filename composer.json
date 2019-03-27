@@ -1,0 +1,26 @@
+{
+    "name": "kenvel/laravel-tinkoff",
+    "type": "library",
+    "description": "Simple Tinkoff bank acquiring library.",
+    "keywords": [
+        "tinkoff",
+        "acquiring"
+    ],
+    "homepage": "https://github.com/kenvel/laravel-tinkoff",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitry Kenvel", 
+            "email": "dimult@yahoo.com",
+            "homepage": "https://github.com/kenvel/",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.1"
+    },
+    "autoload": {
+        "psr-4": { "Tinkoff\\": "src/" }
+    }
+}
