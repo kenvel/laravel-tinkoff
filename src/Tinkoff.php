@@ -11,7 +11,7 @@
  * @author Dmitry Kenvel <dimult@yahoo.com>
  */
 
-namespace Tinkoff;
+namespace Kenvel;
 
 class Tinkoff {
     public $error;
