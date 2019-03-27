@@ -17,7 +17,11 @@ class Tinkoff {
     public $error;
     public $response;
 
-	private $acquiring_url;
+    public $payment_id;
+    public $payment_url;
+    public $payment_status;
+
+    private $acquiring_url;
     private $terminal_id;
     private $secret_key;
 
@@ -25,10 +29,6 @@ class Tinkoff {
     private $url_cancel;
     private $url_confirm;
     private $url_get_state;
-
-    private $payment_id;
-    private $payment_url;
-    private $payment_status;
     
     /**
      * Inicialize Tinkoff class
