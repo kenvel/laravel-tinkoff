@@ -104,3 +104,8 @@ if(!$status){
 }
 ```
 
+---
+
+[![Donate button](https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HCC8WUDEV6GE4&source=url)
+
+*Если вы нашли этот проект полезным, пожалуйста сделайте небольшой донат - это поможет мне улучшить код*
