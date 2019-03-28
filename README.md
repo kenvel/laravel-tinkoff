@@ -36,14 +36,16 @@ $tinkoff = new Tinkoff($api_url, $terminal, $secret_key);
 ### 2 Получить URL для оплаты
 ```php
 //Подготовка массива с данными об оплате
-$payment['OrderId']     = '123456';         //Ваш идентификатор платежа
-$payment['Amount']      = '100';            //сумма всего платежа в рублях
-$payment['Language']    = 'ru';             //язык - используется для локализации страницы оплаты
-$payment['Description'] = 'Some buying';    //описание платежа
-$payment['Email']       = 'user@email.com'; //email покупателя
-$payment['Phone']       = '89099998877';    //телефон покупателя
-$payment['Name']        = 'Customer name';  //Имя покупателя
-$payment['Taxation']    = 'usn_income';     //Налогооблажение
+$payment[
+    'OrderId'       => '123456',        //Ваш идентификатор платежа
+    'Amount'        => '100',           //сумма всего платежа в рублях
+    'Language'      => 'ru',            //язык - используется для локализации страницы оплаты
+    'Description'   => 'Some buying',   //описание платежа
+    'Email'         => 'user@email.com',//email покупателя
+    'Phone'         => '89099998877',   //телефон покупателя
+    'Name'          => 'Customer name', //Имя покупателя
+    'Taxation'      => 'usn_income'     //Налогооблажение
+];
 
 //подготовка массива с покупками
 $items[] = [
