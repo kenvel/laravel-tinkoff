@@ -23,7 +23,7 @@ use Kenvel\Tinkoff;
 ```
 
 ## Примеры использования
-### 1 Инициализация
+### 1. Инициализация
 
 ```php
 $api_url    = 'https://securepay.tinkoff.ru/v2/';
@@ -33,7 +33,7 @@ $secret_key = 'terminal_secret_password';
 $tinkoff = new Tinkoff($api_url, $terminal, $secret_key);
 ```
 
-### 2 Получить URL для оплаты
+### 2. Получить URL для оплаты
 ```php
 //Подготовка массива с данными об оплате
 $payment[
@@ -66,7 +66,7 @@ if(!$paymentURL){
 }
 ```
 
-### 3 Получить статус платежа
+### 3. Получить статус платежа
 ```php
 //$payment_id Идентификатор платежа банка (полученый в пункте "2 Получить URL для оплаты")
 
@@ -80,7 +80,7 @@ if(!$status){
 }
 ```
 
-### 4 Отмена платежа
+### 4. Отмена платежа
 ```php
 $status = $tinkoff->cencelPayment($payment_id)
 
@@ -92,7 +92,7 @@ if(!$status){
 }
 ```
 
-### 5 Подтверждение платежа
+### 5. Подтверждение платежа
 ```php
 $status = $tinkoff->confirmPayment($payment_id)
 
