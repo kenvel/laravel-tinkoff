@@ -12,7 +12,7 @@
 
 С помощью [Composer](https://getcomposer.org/):
 
-```php
+```bash
 composer require kenvel/laravel-tinkoff
 ```
 
