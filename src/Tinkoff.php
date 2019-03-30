@@ -37,8 +37,8 @@ class Tinkoff {
      * @param [string] $terminal_id   - acquiring terminal number
      * @param [string] $secret_key    - acquiring terminal password
      */
-	public function __construct($acquiring_url, $terminal_id, $secret_key) {
-		$this->acquiring_url  = $acquiring_url;
+    public function __construct($acquiring_url, $terminal_id, $secret_key) {
+	$this->acquiring_url  = $acquiring_url;
         $this->terminal_id    = $terminal_id;
         $this->secret_key     = $secret_key;
         $this->setupUrls();
