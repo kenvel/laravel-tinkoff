@@ -36,7 +36,6 @@ class Tinkoff {
      * @param [string] $acquiring_url - tinkoff acquiring APi url
      * @param [string] $terminal_id   - acquiring terminal number
      * @param [string] $secret_key    - acquiring terminal password
-     * @return Tinkoff class object
      */
 	public function __construct($acquiring_url, $terminal_id, $secret_key) {
 		$this->acquiring_url  = $acquiring_url;
