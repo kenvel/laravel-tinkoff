@@ -14,21 +14,21 @@
 namespace Kenvel;
 
 class Tinkoff {
-    public $error;
-    public $response;
-
-    public $payment_id;
-    public $payment_url;
-    public $payment_status;
-
     private $acquiring_url;
     private $terminal_id;
     private $secret_key;
-
+    
     private $url_init;
     private $url_cancel;
     private $url_confirm;
     private $url_get_state;
+
+    protected $error;
+    protected $response;
+
+    protected $payment_id;
+    protected $payment_url;
+    protected $payment_status;
     
     /**
      * Inicialize Tinkoff class
@@ -290,5 +290,17 @@ class Tinkoff {
     private function allKeysIsExistInArray(array $keys, array $arr){
         return (bool) !array_diff_key(array_flip($keys), $arr);
     }
+	
+    /**
+     * return protected propertys
+     * @param  [mixed] $property name
+     * @return [mixed]           value
+     */
+    public function __get($property){
+      if (property_exists($this, $property)) {
+        return $this->$property;
+      }
+    }
+
 }
 ?>
