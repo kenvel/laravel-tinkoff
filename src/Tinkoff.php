@@ -200,11 +200,11 @@ class Tinkoff {
                 }
             }
 
-            $this->error = "Can't create connection to: $path | with args: $args";
+            $this->error .= "Can't create connection to: $path | with args: $args";
             return FALSE;
 
         } else {
-            $this->error = "CURL init filed: $path | with args: $args";
+            $this->error .= "CURL init filed: $path | with args: $args";
             return FALSE;
         }
     }
