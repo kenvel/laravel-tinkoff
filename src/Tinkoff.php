@@ -191,6 +191,8 @@ class Tinkoff {
             if($json) {
                 if (@$json->ErrorCode !== "0") {
                     $this->error = @$json->Details;
+                    return FALSE;
+			
                 } else {                    
                     $this->payment_id       = @$json->PaymentId;
                     $this->payment_url      = @$json->PaymentURL;
