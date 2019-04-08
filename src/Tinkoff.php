@@ -189,8 +189,7 @@ class Tinkoff {
             $json = json_decode($response);            
 
             if($json) {
-                if (@$json->ErrorCode !== "0") {
-                    $this->error = @$json->Details;
+                if ( $this->errorsFound() ) {
                     return FALSE;
 			
                 } else {                    
@@ -209,6 +208,40 @@ class Tinkoff {
             $this->error .= "CURL init filed: $path | with args: $args";
             return FALSE;
         }
+    }
+
+     /**
+     * Finding all possible errors
+     * @return bool
+     */
+    private function errorsFound():bool {
+        $response = json_decode($this->response, TRUE);
+
+        if (isset($response['ErrorCode'])) {
+            $error_code = (int) $response['ErrorCode'];
+        } else {
+            $error_code = 0;
+        }
+
+        if (isset($response['Message'])) {
+            $error_msg = $response['Message'];
+        } else {
+            $error_msg = 'Unknown error.';
+        }
+
+        if (isset($response['Details'])) {
+            $error_message = $response['Details'];
+        } else {
+            $error_message = 'Unknown error.';
+        }
+        
+        if($error_code !== 0){
+            $this->error = 'Error code: '. $error_code . 
+                           ' | Msg: ' . $error_msg . 
+                           ' | Message: ' . $error_message;
+            return TRUE;
+        }
+        return FALSE;     
     }
 
     /**
