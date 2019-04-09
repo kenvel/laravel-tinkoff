@@ -62,7 +62,7 @@ if(!$paymentURL){
   echo($tinkoff->error);
 } else {
   $payment_id = $tinkoff->payment_id;
-  header('Location: ' . $paymentURL);
+  return redirect($result['payment_url']);
 }
 ```
 
