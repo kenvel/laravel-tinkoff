@@ -246,7 +246,6 @@ class Tinkoff {
 
     /**
      * Generate sha256 token for bank API
-     * Use not array items from $args
      * 
      * @param  array of args
      * @return sha256 token
