@@ -52,7 +52,7 @@ class Tinkoff {
      * All keys for correct checking in paymentArrayChecked()
      * and itemsArrayChecked()
      *
-     * Tinkoff does't recieve Item's name longer that $item_name_max_lenght
+     * Tinkoff does not accept a Item name longer than $item_name_max_lenght
      * $amount_multiplicator - need for convert price to cents
      * 
      * @param  array  $payment array of payment data
