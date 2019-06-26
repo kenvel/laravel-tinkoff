@@ -79,16 +79,16 @@ class Tinkoff {
 
             $payment['Items'][] = [
                 'Name'      => mb_strimwidth($item['Name'], 0, $item_name_max_lenght - 1, ''),
-                'Price'     => $item['Price'] * $amount_multiplicator,
+                'Price'     => intval($item['Price'] * $amount_multiplicator),
                 'Quantity'  => $item['Quantity'],
-                'Amount'    => $item['Price'] * $item['Quantity'] * $amount_multiplicator,
+                'Amount'    => intval($item['Price'] * $item['Quantity'] * $amount_multiplicator),
                 'Tax'       => $item['NDS'],
             ];
         }
 
         $params = array(
             'OrderId'       => $payment['OrderId'],
-            'Amount'        => $payment['Amount'] * $amount_multiplicator,
+            'Amount'        => intval($payment['Amount'] * $amount_multiplicator),
             'Language'      => $payment['Language'],
             'Description'   => $payment['Description'],
             'DATA' => [
